@@ -1,0 +1,36 @@
+server:
+  port: 9095
+  servlet:
+    context-path: /aws-sns/v1
+
+spring:
+  profiles:
+    active:
+      - local
+  data:
+    mongodb:
+      uri: mongodb://admin:qwe123@localhost:27017/aws-messages?authSource=admin
+
+cloud:
+  aws:
+    credentials:
+      accessKey: access_key_aws_local
+      secretKey: secret_key_aws_local
+      instanceProfile: false
+    region:
+      static: us-east-1
+      auto: false
+    stack:
+      auto: false
+
+logging:
+  level:
+    com:
+      amazonaws:
+        util:
+          EC2MetadataUtils: error
+
+sensedia:
+  localstack:
+    sns-topic-arn: arn:aws:sns:us-east-1:000000000000:onexlab-sns
+    url: http://localhost:4566

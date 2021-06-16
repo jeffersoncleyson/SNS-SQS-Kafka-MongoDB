@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "2e97f722-6279-49b4-adb3-259d131b0dce",
+		"name": "AWS-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Producer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": \"testeMessage\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9095/aws-sns/v1/producer",
+					"host": [
+						"localhost"
+					],
+					"port": "9095",
+					"path": [
+						"aws-sns",
+						"v1",
+						"producer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consumer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9095/aws-sns/v1/consumer",
+					"host": [
+						"localhost"
+					],
+					"port": "9095",
+					"path": [
+						"aws-sns",
+						"v1",
+						"consumer"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
