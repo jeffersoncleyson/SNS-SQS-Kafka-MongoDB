@@ -16,11 +16,11 @@ spring:
   profiles:
     active:
       - local
-  producer:
+  kakfa:
     bootstrap-servers: localhost:9092
-    topic: topic
-    key-serializer: org.apache.kafka.common.serialization.StringSerializer
-    value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
   data:
     mongodb:
       uri: mongodb://admin:qwe123@localhost:27017/aws-messages?authSource=admin
@@ -29,6 +29,7 @@ sensedia:
   localstack:
     url: http://localhost:4566
     sqs-queue-name: onexlab
+  kafka-topic: topic
 
 # https://stackoverflow.com/questions/43674465/error-while-connecting-to-aws-sqs-from-spring-boot
 #spring:

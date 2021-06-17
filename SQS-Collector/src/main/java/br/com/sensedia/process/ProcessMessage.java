@@ -19,7 +19,7 @@ public class ProcessMessage {
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
 
-    @Value("${spring.producer.topic}")
+    @Value("${sensedia.kafka-topic}")
     private String TOPIC;
 
     public void startProcess(String message, Long sentTimestamp) throws Exception {
